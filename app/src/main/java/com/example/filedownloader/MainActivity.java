@@ -13,7 +13,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void onReceive(Context context, Intent intent){
         Bundle bundle = intent.getExtras();
         int notifyId = 1;
@@ -79,11 +82,20 @@ public class MainActivity extends AppCompatActivity {
                         Toast.LENGTH_LONG).show();
 
                 // Set Notification Title
-
                 NotificationManager notificationManager = (NotificationManager) MainActivity.this
                         .getSystemService(Context.NOTIFICATION_SERVICE);
+                // notification channel
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                String channelId = "notify_001";
+                CharSequence channelName = "Some Channel";
+                int importance = NotificationManager.IMPORTANCE_LOW;
+                NotificationChannel notificationChannel = new NotificationChannel(channelId, channelName, importance);
+
+                notificationManager.createNotificationChannel(notificationChannel);
+
+
+
+ /*               if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     CharSequence name = "Name";
                     String description = "Description";
                     int importance = NotificationManager.IMPORTANCE_DEFAULT;
@@ -95,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                     NotificationManager notificationManager1 =
                             getSystemService(NotificationManager.class);
                     notificationManager1.createNotificationChannel(channel);
-                }
+                }*/
 
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "notify_001")
                         .setSmallIcon(R.mipmap.ic_launcher_round)
@@ -105,12 +117,12 @@ public class MainActivity extends AppCompatActivity {
                         .setAutoCancel(true);
 
                 // Open NotificationView Class on Notification Click
-                Intent intentNotification = new Intent(MainActivity.this, MainActivity.class);
+                Intent intentNotification = new Intent(context, MainActivity.class);
                 // Send data to NotificationView Class
 
                 // Builder to build the notification
 
-                PendingIntent pIntent = PendingIntent.getActivity(MainActivity.this, 0, intentNotification,
+                PendingIntent pIntent = PendingIntent.getActivity(context, 0, intentNotification,
                         PendingIntent.FLAG_UPDATE_CURRENT);
 
                 builder.setContentIntent(pIntent);
