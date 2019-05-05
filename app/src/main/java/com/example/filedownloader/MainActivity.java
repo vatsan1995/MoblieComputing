@@ -32,21 +32,10 @@ public class MainActivity extends AppCompatActivity {
     int temp=0;
 
     void setTextViewStatus() {
+
         try {
-            /*
-            Intent intent = new Intent(this, FileDownloadService.class);
-            // Passing the required variables
-            intent.putExtra(FileDownloadService.FILENAME, "annual_report_2009.pdf");
-            intent.putExtra(FileDownloadService.URL,
-                    "https://nptel.ac.in/syllabus/syllabus_pdf/106106139.pdf");
-            startService(intent);
-            textView.setText("Download started");
-            */
+
             textView = findViewById(R.id.status);
-
-
-
-
 
             temp = FileDownloadService.ServiceRunning;
             Log.i("try","in try "+temp);
@@ -147,9 +136,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
+        super.onCreate(savedInstanceState);
         textView = findViewById(R.id.status);
+
         setContentView(R.layout.activity_main);
         setTextViewStatus();
     }
@@ -168,9 +158,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
- /*   @Override
+   @Override
     protected void onResume() {
         super.onResume();
+        // Receive broadcast using registerReceiver method
         registerReceiver(receiver, new IntentFilter(
                 FileDownloadService.NOTIFICATION));
     }
@@ -178,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         unregisterReceiver(receiver);
-    } */
+    }
 
    /* private void createNotificationChannel() {
         // Create the NotificationChannel, but only on API 26+ because
@@ -198,13 +189,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View view) {
 
-        int id =1;
 
         // Dynamic Permission needed from Oreo.
         // Checks of required permissions are present. If not, requests consent from User.
         verifyStoragePermissions(this);
 
-        // Intent is created to start download service from this activity.
+        // Intent is created to start 'download service' from this activity.
         Intent intent = new Intent(this, FileDownloadService.class);
         // Passing the required variables
         intent.putExtra(FileDownloadService.FILENAME, "annual_report_2009.pdf");
