@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/accel_x_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="44dp"
+        android:layout_marginBottom="433dp"
+        android:text="X"
+        android:textSize="36sp"
+        tools:layout_alignParentRight="false" />
+
+    <TextView
+        android:id="@+id/accel_y_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="45dp"
+        android:layout_marginBottom="383dp"
+        android:text="Y"
+        android:textSize="36sp"
+        tools:layout_alignParentRight="false" />
+
+    <TextView
+        android:id="@+id/accel_z_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="47dp"
+        android:layout_marginBottom="332dp"
+        android:text="Z"
+        android:textSize="36sp"
+        tools:layout_alignParentRight="false" />
+
+    <TextView
+        android:id="@+id/gyro_x_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="43dp"
+        android:layout_marginBottom="233dp"
+        android:text="X"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/gyro_y_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="41dp"
+        android:layout_marginBottom="180dp"
+        android:text="Y"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/gyro_z_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="39dp"
+        android:layout_marginBottom="129dp"
+        android:text="Z"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/light_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="18dp"
+        android:text="Lux"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/btn_strt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/Accel"
+        android:layout_alignParentLeft="true"
+
+        android:layout_marginLeft="74dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="-38dp"
+        android:background="@android:color/transparent"
+        android:text="Start"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/btn_stp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/Accel"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="209dp"
+
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toLeftOf="@id/btn_strt"
+        android:background="@android:color/transparent"
+        android:text="Stop"
+        android:textSize="30sp" />
+
+
+    <TextView
+        android:id="@+id/Accel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="st"
+
+        android:layout_alignParentLeft="true"
+
+
+        android:layout_marginLeft="-1dp"
+        android:text="Accelerometer (m/s2)"
+        android:textColor="#271053"
+        android:textColorLink="#E67F97"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/accel"
+        android:layout_width="372dp"
+        android:layout_height="57dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginBottom="262dp"
+        android:text="Gyroscope (rad/s)"
+        android:textColor="#271053"
+        android:textColorLink="#E67F97"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/accel2"
+        android:layout_width="372dp"
+        android:layout_height="57dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginBottom="58dp"
+        android:text="Light (lx)"
+        android:textColor="#271053"
+        android:textColorLink="#E67F97"
+        android:textSize="26sp" />
+
+
+</RelativeLayout>
